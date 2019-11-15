@@ -1,0 +1,106 @@
+{
+  "Code": "2888663",
+  "Description": "Via Saragat Via Trasimeno",
+  "Location": {
+    "X": 9.24963681531391,
+    "Y": 45.515420643682248
+  },
+  "CustomerCode": "12902",
+  "Municipality": "Milano",
+  "Address": "Via Saragat Via Trasimeno",
+  "Telephone": "",
+  "Fax": "",
+  "SiteUrl": "",
+  "Email": "",
+  "Category": {
+    "CategoryId": "20",
+    "CategoryName": "Fermate mezzi di superficie",
+    "HasTimeTables": true,
+    "Icons": null
+  },
+  "Details": {},
+  "Dynamic_First_Level": {},
+  "Lines": [
+    {
+      "Line": {
+        "LineId": "53",
+        "OperatorCode": "",
+        "LineCode": "53",
+        "LineDescription": "S.Marelli M1 - Lambrate FS",
+        "TransportMode": 0,
+        "Suburban": false,
+        "OtherRoutesAvailable": false,
+        "Radiobus": false,
+        "RadiobusCapolinea": false
+      },
+      "Direction": "0",
+      "BookletUrl": "http://orari.atm-mi.it/53_12902.pdf",
+      "BookletUrl2": "53",
+      "WaitMessage": "in arrivo",
+      "JourneyPatternId": "53|0",
+      "TrafficBulletins": [],
+      "Links": [
+        {
+          "Rel": "timetable",
+          "Href": "tpl/stops/12902/timetable/line/53/dir/0",
+          "Title": null
+        },
+        {
+          "Rel": "journeypattern",
+          "Href": "tpl/journeyPatterns/53|0",
+          "Title": null
+        }
+      ]
+    },
+    {
+      "Line": {
+        "LineId": "56",
+        "OperatorCode": "",
+        "LineCode": "56",
+        "LineDescription": "Q.re Adriano - Loreto",
+        "TransportMode": 0,
+        "Suburban": false,
+        "OtherRoutesAvailable": false,
+        "Radiobus": false,
+        "RadiobusCapolinea": false
+      },
+      "Direction": "0",
+      "BookletUrl": "http://orari.atm-mi.it/56_12902.pdf",
+      "BookletUrl2": "56",
+      "WaitMessage": "6 min",
+      "JourneyPatternId": "56|0",
+      "TrafficBulletins": [
+        {
+          "Title": "Bus 56 e 174: spostamento di fermata dal 29/07",
+          "Body": "<h3>Spostamento di fermata dalle ore 7 del 29 luglio, per 3 mesi circa.</h3>\n<p>Per lavori stradali, la fermata di via Padova 1, prima di piazzale Loreto (in direzione Loreto), è spostata più indietro di 30 metri circa, in via Padova prima del civico 3.</p>\n",
+          "PublicationDate": "2019-07-17T06:39:02Z",
+          "ExpirationaDate": "2019-11-16T22:00:00Z"
+        }
+      ],
+      "Links": [
+        {
+          "Rel": "timetable",
+          "Href": "tpl/stops/12902/timetable/line/56/dir/0",
+          "Title": null
+        },
+        {
+          "Rel": "journeypattern",
+          "Href": "tpl/journeyPatterns/56|0",
+          "Title": null
+        }
+      ]
+    }
+  ],
+  "Links": [
+    {
+      "Rel": "self",
+      "Href": "geodata/pois2888663",
+      "Title": null
+    },
+    {
+      "Rel": "linesummary",
+      "Href": "tpl/stops/12902/linesummary",
+      "Title": null
+    }
+  ]
+}

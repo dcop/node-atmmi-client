@@ -1,0 +1,68 @@
+[
+  {
+    "Code": "2858236",
+    "Description": "Via Saragat Via Trasimeno",
+    "Location": {
+      "X": 9.24963681531391,
+      "Y": 45.515420643682248
+    },
+    "CustomerCode": "12902",
+    "Municipality": "Milano",
+    "Address": "Via Saragat Via Trasimeno",
+    "Telephone": "",
+    "Fax": "",
+    "SiteUrl": "",
+    "Email": "",
+    "Category": {
+      "CategoryId": "20",
+      "CategoryName": "",
+      "HasTimeTables": true,
+      "Icons": null
+    },
+    "Details": {},
+    "Dynamic_First_Level": {},
+    "Lines": [
+      {
+        "Line": {
+          "LineId": "53",
+          "OperatorCode": "",
+          "LineCode": "53",
+          "LineDescription": "S.Marelli M1 - Lambrate FS",
+          "TransportMode": 0,
+          "Suburban": false,
+          "OtherRoutesAvailable": false,
+          "Radiobus": false,
+          "RadiobusCapolinea": false
+        },
+        "Direction": "0",
+        "BookletUrl": "http://orari.atm-mi.it/53_12902.pdf",
+        "BookletUrl2": "53",
+        "WaitMessage": null,
+        "JourneyPatternId": "53|0",
+        "TrafficBulletins": [],
+        "Links": []
+      },
+      {
+        "Line": {
+          "LineId": "56",
+          "OperatorCode": "",
+          "LineCode": "56",
+          "LineDescription": "Q.re Adriano - Loreto",
+          "TransportMode": 0,
+          "Suburban": false,
+          "OtherRoutesAvailable": false,
+          "Radiobus": false,
+          "RadiobusCapolinea": false
+        },
+        "Direction": "0",
+        "BookletUrl": "http://orari.atm-mi.it/56_12902.pdf",
+        "BookletUrl2": "56",
+        "WaitMessage": null,
+        "JourneyPatternId": "56|0",
+        "TrafficBulletins": [],
+        "Links": []
+      }
+    ],
+    "Links": []
+  }
+]
