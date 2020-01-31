@@ -1,7 +1,9 @@
-type Location = {
+export interface Location {
   "X": number,
   "Y": number
 };
+
+export interface Point extends Location {}
 
 export type Category = {
   "CategoryId": string,
@@ -12,7 +14,7 @@ export type Category = {
 
 export type Details = {};
 
-type LineInfo = {
+export type LineInfo = {
   "LineId": string,
   "OperatorCode": string,
   "LineCode": string,
@@ -22,6 +24,7 @@ type LineInfo = {
   "OtherRoutesAvailable": boolean,
   "Radiobus": boolean,
   "RadiobusCapolinea": boolean
+  "Links": Array<Link>
 };
 
 export interface TrafficBulletin {
@@ -63,5 +66,5 @@ export interface StopInfo {
   "Details": Details,
   "Dynamic_First_Level": {},
   "Lines": Array<Line>,
-  "Links": []
+  "Links": Array<Link>
 };
