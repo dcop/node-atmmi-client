@@ -18,7 +18,7 @@ export interface GeoData {
   "Email": string,
   "Category": Category,
   "Details": Details,
-  "Dynamic_First_Level": {},
+  "Dynamic_First_Level": any,
   "Lines": Array<Line>,
   "Links": Array<Link>
 }
