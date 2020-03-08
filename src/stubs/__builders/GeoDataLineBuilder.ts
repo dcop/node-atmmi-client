@@ -1,11 +1,14 @@
 import { GeoDataLine } from "../../dto/GeoDataDTO";
 import geoData from '../geoData.json'
+import { TrafficBulletin } from "../../dto/StopInfoDTO";
 
 export class GeoDataLineBuilder {
   private waitMessage: string;
   private lineCode: string;
+  private bulletins: TrafficBulletin[];
 
   constructor() {
+    this.bulletins = []
   }
 
   static aGeoDataLine() {
@@ -24,6 +27,17 @@ export class GeoDataLineBuilder {
     return this;
   }
 
+  withTrafficBulletin(bulletin: string): this {
+    this.bulletins.push({
+      Body: bulletin,
+      ExpirationDate: null,
+      PublicationDate: null,
+      Title: "A_TITLE"
+    });
+
+    return this
+  }
+
   build(): GeoDataLine {
     return {
       ...geoData.Lines[0],
@@ -31,7 +45,8 @@ export class GeoDataLineBuilder {
       Line: {
         ...geoData.Lines[0].Line,
         LineCode: this.lineCode
-      }
+      },
+      TrafficBulletins: this.bulletins
     }
   }
 }
