@@ -2,7 +2,7 @@ import geoData from '../geoData.json'
 import { GeoDataDTO, GeoDataLine } from "../../dto/GeoDataDTO";
 
 export class GeoDataDTOBuilder {
-  private lines: GeoDataLine[];
+  private readonly lines: GeoDataLine[];
 
   constructor() {
     this.lines = [];

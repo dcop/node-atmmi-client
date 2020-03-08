@@ -20,22 +20,6 @@ describe("Atm mi client", () => {
     expect(client).not.toBeNull();
   });
 
-  it('should get the specific stop', async () => {
-    const stopId = 12902;
-
-    const response: AxiosResponse<Array<StopInfoDTO>> = await client.codeFor(stopId);
-
-    expect(response.data[0].Code).toBe("2975051");
-  });
-
-  it('should return geodata poi info', async () => {
-    const poiCode = 2975051;
-
-    const response: AxiosResponse<GeoDataDTO> = await client.geoDataFor(poiCode);
-
-    expect(response.data.Code).toBe("2975051");
-  });
-
   it('should return an object with waiting times for each line', async () => {
     const stopId = 12902;
     const response = await client.waitingMessagesFor(stopId);
