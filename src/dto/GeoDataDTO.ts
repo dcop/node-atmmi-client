@@ -1,9 +1,26 @@
-import {
-  Category,
-  Details,
-  Line,
-  Link
-} from "./StopInfoDTO";
+import { Category, Details, Link, Location, TrafficBulletin } from "./StopInfoDTO";
+import { Direction } from "../client/Direction";
+
+type Line = {
+  Line: {
+    "LineId": string,
+    "OperatorCode": string,
+    "LineCode": string,
+    "LineDescription": string,
+    "TransportMode": number,
+    "Suburban": boolean,
+    "OtherRoutesAvailable": boolean,
+    "Radiobus": boolean,
+    "RadiobusCapolinea": boolean
+  },
+  "Direction": string,
+  "BookletUrl": string,
+  "BookletUrl2": string,
+  "WaitMessage": string,
+  "JourneyPatternId": string,
+  "TrafficBulletins": TrafficBulletin[],
+  "Links": Array<Link>
+}
 
 export interface GeoDataDTO {
   "Code": string,
