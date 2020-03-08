@@ -1,4 +1,4 @@
-import {LineInfo, Link, Point} from "./StopInfo";
+import {LineInfo, Link, Point} from "./StopInfoDTO";
 
 export interface Stop {
   "OperatorCode": string,
@@ -16,7 +16,7 @@ export interface Segment {
   "Points": Array<Point>
 }
 
-export interface Journey {
+export interface JourneyDTO {
   "Id": string,
   "Code": string,
   "Direction": string,

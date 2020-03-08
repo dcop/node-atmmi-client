@@ -31,7 +31,7 @@ export interface TrafficBulletin {
   "Title": string,
   "Body": string,
   "PublicationDate": string // ISO,
-  "ExpirationaDate": string // ISO
+  "ExpirationDate": string // ISO
 }
 
 export interface Link {
@@ -51,7 +51,7 @@ export type Line = {
   "Links": Array<Link>
 };
 
-export interface StopInfo {
+export interface StopInfoDTO {
   "Code": string,
   "Description": string,
   "Location": Location,

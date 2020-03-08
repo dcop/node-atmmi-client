@@ -3,9 +3,9 @@ import {
   Details,
   Line,
   Link
-} from "./StopInfo";
+} from "./StopInfoDTO";
 
-export interface GeoData {
+export interface GeoDataDTO {
   "Code": string,
   "Description": string,
   "Location": Location,

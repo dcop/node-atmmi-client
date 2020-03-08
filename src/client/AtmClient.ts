@@ -1,7 +1,8 @@
-import { StopInfo } from "../model/StopInfo";
+import { StopInfoDTO } from "../dto/StopInfoDTO";
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-import { GeoData } from "../model/GeoData";
+import { GeoDataDTO } from "../dto/GeoDataDTO";
 import { Direction } from "./Direction";
+import { toWaitingMessages } from "../domain/adapters/toWaitingMessages";
 
 const url = "https://giromilano.atm.it/proxy.ashx";
 
@@ -12,14 +13,14 @@ export class AtmClient {
     this.url = url;
   }
 
-  async codeFor(_stopId: number): Promise<AxiosResponse<Array<StopInfo>>> {
+  async codeFor(_stopId: number): Promise<AxiosResponse<Array<StopInfoDTO>>> {
     const payload = { url: `tpPortal/tpl/stops/search/${_stopId}/` };
     const config = { params: payload };
 
     return await this.callServerWith(config);
   }
 
-  async geoDataFor(poiCode: number): Promise<AxiosResponse<GeoData>> {
+  async geoDataFor(poiCode: number): Promise<AxiosResponse<GeoDataDTO>> {
     const payload = {url: `tpPortal/geodata/pois/${poiCode}/`, lang: 'it'};
 
     const config = { params: payload };
@@ -41,13 +42,9 @@ export class AtmClient {
   }
 
   async waitingMessagesFor(stopId: number) {
-    const stopInfo = await this.codeFor(stopId);
-    const geoData = await this.geoDataFor(Number(stopInfo.data[0].Code));
+    const stopInfo: AxiosResponse<Array<StopInfoDTO>> = await this.codeFor(stopId);
+    const geoData: AxiosResponse<GeoDataDTO> = await this.geoDataFor(Number(stopInfo.data[0].Code));
 
-    return geoData.data.Lines.map(line => ({
-      line: line.Line.LineCode,
-      waitingTimeInMinutes: parseInt(line.WaitMessage) || 0,
-      alerts: line.TrafficBulletins.map(bulletin => bulletin.Body)
-    }))
+    return toWaitingMessages(geoData.data)
   }
 }

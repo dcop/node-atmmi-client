@@ -4,8 +4,8 @@
 
 import { AtmClient } from "./AtmClient";
 import {AxiosResponse} from "axios";
-import { StopInfo } from "../model/StopInfo";
-import { GeoData } from "../model/GeoData";
+import { StopInfoDTO } from "../dto/StopInfoDTO";
+import { GeoDataDTO } from "../dto/GeoDataDTO";
 
 jest.setTimeout(10000);
 
@@ -23,7 +23,7 @@ describe("Atm mi client", () => {
   it('should get the specific stop', async () => {
     const stopId = 12902;
 
-    const response: AxiosResponse<Array<StopInfo>> = await client.codeFor(stopId);
+    const response: AxiosResponse<Array<StopInfoDTO>> = await client.codeFor(stopId);
 
     expect(response.data[0].Code).toBe("2975051");
   });
@@ -31,7 +31,7 @@ describe("Atm mi client", () => {
   it('should return geodata poi info', async () => {
     const poiCode = 2975051;
 
-    const response: AxiosResponse<GeoData> = await client.geoDataFor(poiCode);
+    const response: AxiosResponse<GeoDataDTO> = await client.geoDataFor(poiCode);
 
     expect(response.data.Code).toBe("2975051");
   });
