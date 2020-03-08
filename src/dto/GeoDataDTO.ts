@@ -1,7 +1,6 @@
 import { Category, Details, Link, Location, TrafficBulletin } from "./StopInfoDTO";
-import { Direction } from "../client/Direction";
 
-type Line = {
+export type GeoDataLine = {
   Line: {
     "LineId": string,
     "OperatorCode": string,
@@ -36,6 +35,6 @@ export interface GeoDataDTO {
   "Category": Category,
   "Details": Details,
   "Dynamic_First_Level": any,
-  "Lines": Array<Line>,
+  "Lines": Array<GeoDataLine>,
   "Links": Array<Link>
 }
