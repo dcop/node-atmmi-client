@@ -2,36 +2,33 @@
  * @jest-environment node
  */
 
+import axios from 'axios';
+
 import { AtmClient } from "./AtmClient";
-import {AxiosResponse} from "axios";
-import { StopInfoDTO } from "../dto/StopInfoDTO";
-import { GeoDataDTO } from "../dto/GeoDataDTO";
+import { ToWaitingMessages } from "../domain/adapters/toWaitingMessages";
 
 jest.setTimeout(10000);
+jest.mock("axios");
 
 describe("Atm mi client", () => {
+  const stopId = 12902;
+
   let client: AtmClient;
+  let adapter: ToWaitingMessages;
 
-  beforeEach(() => {
-    client = new AtmClient();
+  xit("should call proper url", async () => {
+    const url: string = "http://random.url/something.dunno";
+    client = new AtmClient(url, null);
+    await client.waitingMessagesFor(stopId);
+
+    expect(axios.post).toHaveBeenCalledWith({ url })
   });
 
-  it('should create a new client', () => {
-    expect(client).not.toBeNull();
+  xit('should call the adapter on successful response', async () => {
+    adapter = jest.fn()
+    client = new AtmClient(null, adapter);
+    await client.waitingMessagesFor(stopId);
+
+    expect(adapter).toHaveBeenCalled();
   });
-
-  it('should return an object with waiting times for each line', async () => {
-    const stopId = 12902;
-    const response = await client.waitingMessagesFor(stopId);
-
-    expect(response).toStrictEqual([{
-      line: 53,
-      waitingTimeInMinutes: 2,
-      alerts: []
-    },{
-      line: 56,
-      waitingTimeInMinutes: 3,
-      alerts: ["È in programma la posa di un ponteggio in via Padova, da mercoledì 4 dicembre per 3 mesi circa, la fermata di via Padova 1 prima di piazzale Loreto, <strong>in direzione Loreto M1 M2\\piazzale Loreto,</strong> è spostata indietro di 30 metri circa, sempre in via Padova, prima del civico 3.",]
-    }]);
-  })
 });

@@ -1,6 +1,8 @@
 import { GeoDataDTO } from "../../dto/GeoDataDTO";
 import { WaitingMessage } from "../model/WaitingMessage";
 
+export type ToWaitingMessages = (geoData: GeoDataDTO) => WaitingMessage[]
+
 export function toWaitingMessages(geoData: GeoDataDTO): WaitingMessage[] {
   return geoData.Lines.map(line => ({
     line: line.Line.LineCode,
