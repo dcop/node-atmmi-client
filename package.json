@@ -1,7 +1,7 @@
 {
   "name": "node-atmmi-client",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Unofficial node client to retrieve information about atm-mi services",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
